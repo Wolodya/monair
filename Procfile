@@ -1,0 +1,1 @@
+web: gunicorn monair.wsgi 
