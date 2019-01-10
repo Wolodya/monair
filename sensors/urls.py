@@ -14,6 +14,8 @@ urlpatterns = [
         name='sensors-list'),
     url(r'^sensors/(?P<pk>\d+)/$', views.SensorDetail.as_view(),
         name='sensors-detail'),
+    url(r'^sensors/sensor_id_list/$', views.SensorIdList.as_view(),
+        name='sensors-id-list'),
 
 
 ]
