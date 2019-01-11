@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')rqs665hg%^q+(26&e9)jla4r)jt-kz1%x^esfo7p%^_k=_8lc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'sensors.apps.SensorsConfig',
     'django_filters',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework_swagger'
 ]
 
 MIDDLEWARE = [

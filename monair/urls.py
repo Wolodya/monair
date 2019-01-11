@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from rest_framework_swagger.views import get_swagger_view
 from django.conf.urls import include, url
+schema_view = get_swagger_view(title='Monair API')
 
 urlpatterns = [
-    url(r'^', include('sensors.urls'))  
-  
+    url(r'^$', schema_view),
+    url(r'^', include('sensors.urls'))
+
 ]
