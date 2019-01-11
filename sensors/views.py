@@ -17,7 +17,7 @@ class SensorList(generics.ListCreateAPIView):
     filterset_class = SensorFilter
     ordering_fields = ('date', 'temperature', 'humidity',
                        'pressure', 'pm10', 'pm25', 'pm1', 'nco', 'nso2', 'no3', 'nnh3', 'nno2')
-
+    ordering=('id',)
 
 class SensorDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Sensor.objects.all()
