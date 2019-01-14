@@ -60,7 +60,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = (   
     
     'localhost:4200',
-    'https://monair-app.herokuapp.com'
+    'monair-app.herokuapp.com'
     
 )
 
