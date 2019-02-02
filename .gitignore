@@ -117,3 +117,5 @@ node_modules/
 
 bundles/
 staticfiles/
+
+webpack-stats.json
