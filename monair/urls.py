@@ -13,14 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
 from rest_framework_swagger.views import get_swagger_view
-from django.conf.urls import include, url
+from django.conf.urls import include
+from django.urls.conf import path
 schema_view = get_swagger_view(title='Monair API')
 
 urlpatterns = [
-    url(r'^$', schema_view),
-    url(r'^', include('sensors.urls'))
-
+    path('', schema_view),
+    path('', include('sensors.urls'))
 ]
