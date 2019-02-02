@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'sensors.apps.SensorsConfig',
     'django_filters',
     'corsheaders',
-    'rest_framework_swagger'
+    'rest_framework_swagger',
+
+    'sensors.apps.SensorsConfig',
+    'frontend.apps.FrontendConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,10 +59,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (   
-    
+CORS_ORIGIN_WHITELIST = (
     'localhost:4200',
-    
 )
 
 ROOT_URLCONF = 'monair.urls'
