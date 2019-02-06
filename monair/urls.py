@@ -20,6 +20,6 @@ schema_view = get_swagger_view(title='Monair API')
 
 urlpatterns = [
     path('', schema_view),
-    path('', include('sensors.urls'))
+    path('', include('sensors.urls')),
     path('map/', include('frontend.urls'))
 ]
