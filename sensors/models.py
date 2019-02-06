@@ -6,6 +6,8 @@ from django.db import models
 class Sensor(models.Model):
     sensor_id = models.IntegerField()
     date = models.DateTimeField()
+    latitude = models.DecimalField(max_digits=10, decimal_places=8)
+    longitude = models.DecimalField(max_digits=11, decimal_places=8)
     temperature = models.IntegerField()
     humidity = models.IntegerField()
     pressure = models.IntegerField()
