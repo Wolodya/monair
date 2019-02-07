@@ -7,22 +7,14 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter
 from sensors.filters import SensorFilter
 from rest_framework.response import Response
-# Create your views here.
+from rest_framework.viewsets import ModelViewSet
 
 
-class SensorList(generics.ListCreateAPIView):
+class SensorViewSet(ModelViewSet):
     queryset = Sensor.objects.all()
     serializer_class = SensorSerializer
     filter_backends = (DjangoFilterBackend, OrderingFilter,)
-    filterset_class = SensorFilter
-    ordering_fields = ('date', 'temperature', 'humidity',
-                       'pressure', 'pm10', 'pm25', 'pm1', 'nco', 'nso2', 'no3', 'nnh3', 'nno2')
-    ordering=('id',)
-
-class SensorDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Sensor.objects.all()
-    serializer_class = SensorSerializer
-
+    ordering_fields = ('date',)
 
 class SensorIdList(APIView):
     def get(self, request):
