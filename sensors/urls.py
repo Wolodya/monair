@@ -12,5 +12,6 @@ router.register('sensors', views.SensorViewSet)
 # Additionally, we include the login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('sensors/sensor_id_list/', views.SensorIdList.as_view(), name='sensors-id-list'),
+    path('sensor-id-location-list/', views.SensorIdLocationList.as_view(), name='sensors-id-list'),
+    path('sensor-data-24h/<int:sensor_id>/', views.Sensor24Hours.as_view(), name='sensor-data-24h')
 ]
