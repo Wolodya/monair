@@ -24,5 +24,5 @@ python manage.py migrate
 python manage.py collectstatic
 
 # start server
-python manade.py runserver
+python manage.py runserver
 ```
