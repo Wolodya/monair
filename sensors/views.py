@@ -19,7 +19,10 @@ class SensorViewSet(ModelViewSet):
     serializer_class = SensorSerializer
     filter_backends = (DjangoFilterBackend, OrderingFilter,)
     filterset_class = SensorFilter
-    ordering_fields = ('date',)
+    ordering_fields = ('date', 'temperature', 'humidity',
+                       'pressure', 'pm10', 'pm25', 'pm1',
+                       'nco', 'nso2', 'no3', 'nnh3', 'nno2')
+    ordering = ('id', )
 
 
 class SensorIdLocationList(APIView):
