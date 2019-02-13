@@ -17,6 +17,6 @@ from django.conf.urls import include
 from django.urls.conf import path
 
 urlpatterns = [
-    path('', include('sensors.urls')),
-    path('map/', include('frontend.urls'))
+    path('', include('frontend.urls')),
+    path('api/', include('sensors.urls')),
 ]
