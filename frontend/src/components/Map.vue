@@ -6,7 +6,7 @@
               :zoom="zoom" :center="center">
           <template v-for="sensor in sensors">
               <mgl-marker :key="sensor.sensor_id" :color="color"
-                          :coordinates="[sensor.latitude, sensor.longitude]">
+                          :coordinates="[sensor.longitude, sensor.latitude]">
                   <mgl-popup :closeButton="false" class="mobile-charts">
                       <chart :sensor="sensor.sensor_id" :date="date"/>
                   </mgl-popup>
