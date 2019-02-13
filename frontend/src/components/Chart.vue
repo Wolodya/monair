@@ -38,7 +38,6 @@ export default {
                 .get("/api/sensor-data-24h/" + self.sensor + "/" + "?date=" + self.date)
                 .then(response => {
                     self.sensor_data = response.data["24h"];
-                    console.log(response)
                 })
                 .finally(() => {
                     self.loaded = true;
@@ -64,7 +63,10 @@ export default {
                         color: "#0277BD"
                     }
                 }];
-                Plotly.react(attr + this.sensor, data, layout, {displayModeBar: false});
+                try{
+                    Plotly.react(attr + this.sensor, data, layout, {displayModeBar: false});
+                }
+                catch(e){ }
             }
         } 
     },
