@@ -64,7 +64,7 @@ export default {
                         color: "#0277BD"
                     }
                 }];
-                Plotly.newPlot(attr + this.sensor, data, layout, {displayModeBar: false});
+                Plotly.react(attr + this.sensor, data, layout, {displayModeBar: false});
             }
         } 
     },
