@@ -24,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.(sa|sc|c)ss$/,
-                use: [ MiniCssExtractPlugin.loader, "css-loader", "sass-loader",]
+                use: [ MiniCssExtractPlugin.loader, "css-loader", "sass-loader",],
             },
 
         ]
@@ -36,16 +36,4 @@ module.exports = {
             filename: "[name].css",
         }),
     ],
-    optimization: {
-        splitChunks: {
-          cacheGroups: {
-            styles: {
-              name: "styles",
-              test: /\.(sa|sc|c)ss$/,
-              chunks: "all",
-              enforce: true
-            }
-          }
-        }
-      },
 }
