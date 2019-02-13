@@ -11,6 +11,7 @@ from rest_framework.viewsets import ModelViewSet
 from _datetime import datetime, timedelta
 from django.db.models.aggregates import Avg
 from _collections import defaultdict
+from django.utils import timezone
 
 
 class SensorViewSet(ModelViewSet):
@@ -28,14 +29,14 @@ class SensorIdLocationList(APIView):
 
 class Sensor24Hours(APIView):
     def get(self, request, sensor_id):
-        now = datetime.now().replace(microsecond=0, second=0, minute=0)
-        from_date = now if self.request.GET.get('date') is None else datetime.strptime(self.request.GET.get('date'), '%Y-%m-%d')
-        from_date = now if from_date.date() == now.date() else from_date
+        date = datetime.now().replace(microsecond=0, second=0, minute=0) - timedelta(days=1)
+        from_date = date if self.request.GET.get('date') is None else datetime.strptime(self.request.GET.get('date'), '%Y-%m-%d')
+        from_date = date if from_date.date() == date.date() else from_date
         fields = [field.name for field in getattr(Sensor, '_meta').get_fields()
                   if isinstance(field, SensorIntegerField)]
 
         data = {}
-        for x in range(1, 25):
+        for x in range(0, 24):
             hour = from_date + timedelta(hours=x)
             sensor = Sensor.objects.filter(sensor_id=sensor_id,
                                            date__gte=hour,
@@ -45,6 +46,4 @@ class Sensor24Hours(APIView):
         for date, attrs in data.items():
             for attr, value in attrs.items():
                 data_by_attribute[attr.split('_')[0]].update({date: value})
-        return Response({'from_date': str(from_date - timedelta(days=1)),
-                         'from_date': str(from_date),
-                         '24h': data_by_attribute})
+        return Response({'24h': data_by_attribute})
