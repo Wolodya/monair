@@ -1,8 +1,9 @@
 # Byte-compiled / optimized / DLL files
 pycache/
+__pycache__
 *.py[cod]
 *$py.class
-.vscode
+.vscode/
 # C extensions
 *.so
 
@@ -104,3 +105,17 @@ mvenv.bak/
 
 # mypy
 .mypy_cache/
+
+.DS_Store
+
+# dependencies
+node_modules/
+
+#eclipse specific
+.pydevproject
+.project
+
+bundles/
+staticfiles/
+
+webpack-stats.json

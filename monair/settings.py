@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'sensors.apps.SensorsConfig',
     'django_filters',
     'corsheaders',
-    'rest_framework_swagger'
+    'webpack_loader',
+
+    'sensors.apps.SensorsConfig',
+    'frontend.apps.FrontendConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,8 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (   
-    
+CORS_ORIGIN_WHITELIST = (
     'localhost:4200',
     'monair-app.herokuapp.com'
     
@@ -141,4 +142,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "frontend/dist"),
+]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json')
+    }
+}
 django_heroku.settings(locals())
