@@ -38,10 +38,10 @@
     "node": "10.x"
   },
   "scripts": {
-    "start":"webpack --config ./frontend/webpack/webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --config ./frontend/webpack/webpack.dev.js --hot",
-    "build": "webpack --config ./frontend/webpack/webpack.prod.js"
+    "build": "webpack --config ./frontend/webpack/webpack.prod.js",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "repository": {
     "type": "git",
@@ -52,5 +52,6 @@
   "bugs": {
     "url": "https://github.com/Wolodya/monair/issues"
   },
-  "homepage": "https://github.com/Wolodya/monair#readme"
+  "homepage": "https://github.com/Wolodya/monair#readme",
+  "heroku-run-build-script": true
 }
