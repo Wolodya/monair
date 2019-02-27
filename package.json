@@ -41,7 +41,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --config ./frontend/webpack/webpack.dev.js --hot",
     "build": "webpack --config ./frontend/webpack/webpack.prod.js",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "heroku-postbuild": "webpack --config ./frontend/webpack/webpack.prod.js"
   },
   "repository": {
     "type": "git",
