@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      accessToken: "",
+      accessToken: "pk.eyJ1IjoiYm9nZGFubW9sb2RldHMiLCJhIjoiY2pjMG9kZ3NjMDNhazJ4cXltNWdhYXh0diJ9.RbZ5rCF0N3-n5GKfGyrI3w",
       mapStyle: "mapbox://styles/mapbox/streets-v11",
       container:"map",
       color: "#FF3D00",
