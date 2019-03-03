@@ -73,8 +73,8 @@ export default {
 $main-color: var(--maincolor);
 
 html, body{
-overflow-y:hidden;
-overflow-x:hidden;
+overflow-y:hidden !important;
+overflow-x:hidden !important;
 }
 #title{
   font-family: "IBM Plex Mono", monospace;
