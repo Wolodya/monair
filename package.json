@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "mapbox-gl": "^0.53.0-beta.1",
     "plotly.js-dist": "^1.44.2",
     "underscore": "^1.9.1",
