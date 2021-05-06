@@ -8,7 +8,7 @@
     "jquery": "^3.3.1",
     "mapbox-gl": "^0.53.0-beta.1",
     "plotly.js-dist": "^1.44.2",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "vue": "^2.6.4",
     "vue-mapbox": "^0.1.4",
     "vue-swatches": "^1.0.2",
